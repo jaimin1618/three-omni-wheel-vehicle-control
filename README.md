@@ -18,11 +18,10 @@ A 3-omni wheel vehicle equipped with a PID control system for precise directiona
 ## Videos
 
 #### mobile control
-![Vehicle control using android-app](omni-wheel-with-mobile-app.mp4)
+C:\Users\Jaimin Chokhawala\Desktop\Project\personal-projects\robocon\three-omni-wheel-vehicle-control\omni-wheel-with-mobile-app.mp4
 
 #### PS3 control
-![Vehicle control using PS3](omni-wheel-with-ps3.mp4)
-
+C:\Users\Jaimin Chokhawala\Desktop\Project\personal-projects\robocon\three-omni-wheel-vehicle-control\omni-wheel-with-ps3.mp4
 
 
 ## Setup & Installation
