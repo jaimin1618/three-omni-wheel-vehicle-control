@@ -18,11 +18,10 @@ A 3-omni wheel vehicle equipped with a PID control system for precise directiona
 ## Videos
 
 #### mobile control
-C:\Users\Jaimin Chokhawala\Desktop\Project\personal-projects\robocon\three-omni-wheel-vehicle-control\omni-wheel-with-mobile-app.mp4
+https://github.com/jaimin1618/three-wheel-omni-directional-vehicle-using-ESP8266/assets/66988372/22f84ec6-2790-4a46-a1ad-d6914473bbfc
 
 #### PS3 control
-C:\Users\Jaimin Chokhawala\Desktop\Project\personal-projects\robocon\three-omni-wheel-vehicle-control\omni-wheel-with-ps3.mp4
-
+https://github.com/jaimin1618/three-wheel-omni-directional-vehicle-using-ESP8266/assets/66988372/bab037e8-a276-4f66-b674-635bbadf51c0
 
 ## Setup & Installation
 
