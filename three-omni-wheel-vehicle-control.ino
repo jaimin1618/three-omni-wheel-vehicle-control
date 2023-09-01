@@ -1,19 +1,19 @@
 #include <avr/io.h>
-#include "MotorUpdate.h"
+#include "Motor.h"
 #include "MPU6050_6Axis_MotionApps20.h"
 #include "MPU6050.h"
-//#include "MPU6050_calibration.h"
 #include "MPU.h"
 #define MASK(k) ((unsigned char)(1 << k))
-/**
-   Globals
-*/
-BaseMotor * bm;
+
+/*=========================
+Global variables
+=========================*/
+BaseMotor* bm;
 bool flag = false;
 uint16_t b_speed = 500;
 bool toggleKi = false;
 
-void displayMotorSpeeds (BaseMotor * bm) {
+void displayMotorSpeeds(BaseMotor* bm) {
   Serial.print("M1: ");
   Serial.print(bm->getM1());
   Serial.print("\n");
@@ -27,7 +27,7 @@ void displayMotorSpeeds (BaseMotor * bm) {
   Serial.print("\n");
 }
 
-void basicMotionWithApp (String key) {
+void basicMotionWithApp(String key) {
   // up, down, left, right
   // CW and ACW
   if (key == "UP") {
@@ -54,9 +54,10 @@ void basicMotionWithApp (String key) {
   } else if (key == "DOWNRIGHT") {
     bm->moveMachine(b_speed - z, -45 - 90, 0);
 
-  } else  if (key == "CROSS") {
+  } else if (key == "CROSS") {
     bm->setMotorSpeeds(0, 0, 0);
-    while (1);
+    while (1)
+      ;
   } else if (key == "CIRCLE") {
     bm->setMotorSpeeds(300, 300, 300);
 
@@ -70,7 +71,7 @@ void basicMotionWithApp (String key) {
 }
 
 
-void basicMotionWithAppPID (String key) {
+void basicMotionWithAppPID(String key) {
   // up, down, left, right
   // CW and ACW
   if (key == "UP") {
@@ -97,9 +98,10 @@ void basicMotionWithAppPID (String key) {
   } else if (key == "DOWNRIGHT") {
     bm->moveMachineWithPID(b_speed, -45 - 90, 0);
 
-  }  else  if (key == "CROSS") {
+  } else if (key == "CROSS") {
     bm->setMotorSpeeds(0, 0, 0);
-    while (1);
+    while (1)
+      ;
 
   } else if (key == "CIRCLE") {
     bm->setMotorSpeeds(300, 300, 300);
@@ -159,20 +161,20 @@ bool filterData(String key) {
   return false;
 }
 
-void setup () {
+void setup() {
   bm = new BaseMotor();
   Serial.begin(115200);
   Serial2.begin(74880);
-  //    set_mpu();
-  //    printParams();
+  // set_mpu();
+  // printParams();
 }
 
 void loop() {
-  //    pid_mpu(); // update MPU data
-  //    printParams();
-  //    delay(100);
-  //    bm->setPID(P, I, D); // update P, I, D parameter
-  //    bm->moveMachineWithPID(0, 0, z);
+  // pid_mpu(); // update MPU data
+  // printParams();
+  // delay(100);
+  // bm->setPID(P, I, D); // update P, I, D parameter
+  // bm->moveMachineWithPID(0, 0, z);
 
   String key = "";
   while (Serial2.available()) {
@@ -181,12 +183,10 @@ void loop() {
   }
 
   if (key != ""
-      && filterData(key)
-     ) {
+      && filterData(key)) {
     Serial.println(key);
     basicMotionWithApp(key);
     // basicMotionWithAppPID(key);
-
   }
   delay(10);
 }
